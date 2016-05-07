@@ -16,7 +16,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
+# =========================
+# Config File
+# =========================
+config.js
 # =========================
 # Operating System Files
 # =========================
