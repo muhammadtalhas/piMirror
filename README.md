@@ -17,4 +17,4 @@ Work in Progress of interactive mirror Running on a Raspberry pi. Huge inspirati
 Stay Tuned for installation!
 
 ## Built With
-*Stay Tuned!
+* Stay Tuned!
