@@ -4,20 +4,28 @@
 <head>
     <title>Mirror</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/config.js"></script>
-    
+    <script src="js/globalUtilities"></script>
     <script src="js/time/time.js"></script>
+    <script src="js/weather/weather.js"></script>
     <script src="js/geoservices/geo.js"></script>
 </head>
 
 <body>
 <div class= "top">
     <div class= "top-left">
+        <div id=Date></div>
         <div id=time></div>
     </div>
-    <div class= "top-right"></div>
+    <div class= "top-right">
+        <div id= wIcon>
+        <i class="wi wi-na"></i>
+        </div>
+        <div id=Temp></div>
+    </div>
 </div>
 
 

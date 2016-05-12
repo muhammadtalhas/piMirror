@@ -1,4 +1,15 @@
 var ampm = "am";
+var monthNames = [
+  "January", "February", "March",
+  "April", "May", "June", "July",
+  "August", "September", "October",
+  "November", "December"
+];
+
+var dayNames = [
+  "Sunday", "Monday", "Tuesday",
+  "Wednesday", "Thursday", "Friday", "Saturday"
+];
 
 function startTime() {
     var today = new Date();
@@ -18,7 +29,7 @@ function startTime() {
             var fullTime = h + ":" + m + ":" + s + " " +ap;
         }else{
             console.log("12 hr format and NO seconds");
-            var fullTime = h + ":" + m +ap;
+            var fullTime = h + ":" + m +" "+ap;
         }
     }
     else{
@@ -31,7 +42,14 @@ function startTime() {
         }
     }
     
-    //var fullTime = h + ":" + m + ":" + s + " " +ap;
+    var dayIndex = today.getDay();
+    var monthIndex = today.getMonth();
+    var day = today.getDate();
+    var year = today.getFullYear();
+    var dateStr= dayNames[dayIndex] + " " + monthNames[monthIndex] + " "+ day + ", " + year;
+    
+    //updateText(document.getElementById('Date'), dateStr);
+    document.getElementById('Date').innerHTML = dateStr;
     document.getElementById('time').innerHTML = fullTime;
    
     var t = setTimeout(startTime, 500);
@@ -41,7 +59,10 @@ function checkTime(i) {
     return i;
 }
 function twelveHour(h) {
-    if (h > 12) {
+    if (h == 0) {
+        h = 12;
+    }
+    else if (h > 12) {
         h = h- 12;
     };
     return h;

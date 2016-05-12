@@ -9,6 +9,11 @@ body {
   float: left;
   font-size: 40px;
   }
+   #Date {
+  float: left;
+  font-size: 30px;
+  }
   .top-right{
   float: right;
+  font-size: 40px;
   }
