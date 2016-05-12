@@ -1,10 +1,15 @@
-function updateText(div, newText) {
-    $(div).fadeOut('slow', function() {
-    div.innerHTML = newText;
+function updateText(div, newText, speed) {
+    if (speed == null) {
+        speed = 400;
+    }
+    $(div).fadeOut(speed, function() {
+        div.innerHTML = newText;
     });
-    
-    $(div).fadeIn();
+
+    $(div).fadeIn(speed);
 }
+
+
 
 /*function fadeOut(element) {
     console.log("Fading out");
@@ -35,5 +40,5 @@ function fadeIn(element) {
 }*/
 
 function toCelsius(f) {
-    return (5/9) * (f-32);
+    return (5 / 9) * (f - 32);
 }

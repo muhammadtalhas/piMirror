@@ -1,11 +1,8 @@
-
-$(document).ready( function() {
+$(document).ready(function() {
     //alert("Page loaded");
-    startTime();
+    clock_init();
+   
     weather_init();
-    /*window.setInterval(function(){
-  weather_init();
-}, 5000);*/
 
-//getGeo(20170);
+    compliment_init();
 });
