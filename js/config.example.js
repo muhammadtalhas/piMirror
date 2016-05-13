@@ -9,10 +9,11 @@ var config = {
                         *keep your refresh rate low  (Highr minuites)
                         *defalt to 30 mins if not provided
                          */
-        fiveday: "true" // true or false NON FUNCTIONAL
+        fiveday: "true" // true or false
     },
     location: {
-    //Not Used Yet
+        location: "20170",
+        googleKey: "API_KEY"
     },
     time: {
         format: 12, //Default to 24 if not provided/invalid
@@ -39,7 +40,8 @@ var config = {
             'Date night?',
             'Lookin\' Good!'
         ]
+    },
+    news: {
+        refreshInterval: 30
     }
-
-
 }
