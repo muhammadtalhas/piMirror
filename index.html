@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+   
     <script src="js/main.js"></script>
     <script src="js/config.js"></script>
     <script src="js/globalUtilities"></script>
@@ -14,6 +17,9 @@
     <script src="js/geoservices/geo.js"></script>
     <script src="js/compliments/compliments.js"></script>
     <script src="js/news/news.js"></script>
+    <script src="js/voice/voicecontrol.js"></script>
+    <script src="js/traffic/maps.js"></script>
+    
 </head>
 
 <body>
@@ -32,11 +38,24 @@
     <div class= "bottom">
         <div id= "compliment"></div>
         <div id= "news">
-            <marquee><pre>Loading News</pre></marquee>
+            <marquee><pre>Loading News...</pre></marquee>
         </div>
     </div>
+
+
+
 </div>
 
+
+    <div class="center">
+        <div id="frame">
+            <p>Desc</p> 
+        </div>
+        <div id=desc>
+           <p>Desc</p> 
+        </div>
+        
+    </div>
 
 </body>
 </html>

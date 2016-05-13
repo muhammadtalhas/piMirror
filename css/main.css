@@ -1,9 +1,13 @@
-body {
+html,body {
     background-color: black;
     color: #fff;
     font-family: 'HelveticaNeue-UltraLight', 'Open Sans', sans-serif;
     font-weight: 300;
     position: relative;
+    
+     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 .top-left {
     float: left;
@@ -40,4 +44,25 @@ body {
 #news{
   padding-bottom: 50px;
   font-size: 20px;
+}
+
+.center {
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:300px;
+    height:300px;
+    margin-left:-150px; /* -1/2 width */
+    margin-top:-150px; /* -1/2 height */
+    border-style: solid
+}
+#frame{
+  width: 300px;
+  height: 250px;
+  /*border-style: solid*/
+}
+#desc{
+  width: 300px;
+  height:50px;
+  /*border-style: solid*/
 }
