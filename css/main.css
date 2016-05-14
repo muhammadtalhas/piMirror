@@ -54,7 +54,18 @@ html,body {
     height:300px;
     margin-left:-150px; /* -1/2 width */
     margin-top:-150px; /* -1/2 height */
-    border-style: solid
+    /*border-style: solid*/
+}
+.container {
+    position:absolute;
+    overflow: hidden;
+    left:50%;
+    top:50%;
+    width:300px;
+    height:300px;
+    margin-left:-150px; /* -1/2 width */
+    margin-top:-150px; /* -1/2 height */
+    /*border-style: solid*/
 }
 #frame{
   width: 300px;
@@ -64,5 +75,6 @@ html,body {
 #desc{
   width: 300px;
   height:50px;
+  color:green;
   /*border-style: solid*/
 }
