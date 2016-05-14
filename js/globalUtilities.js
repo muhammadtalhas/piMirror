@@ -21,3 +21,6 @@ function hideCenterFrame() {
      $("#frame").slideUp("slow");
     })
 }
+function secondsToMins(seconds) {
+    return Math.round(seconds/60);
+}
