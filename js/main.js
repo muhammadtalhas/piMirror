@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    //clock_init();
+    clock_init();
     voicecontrol_init();
     weather_init();
 
