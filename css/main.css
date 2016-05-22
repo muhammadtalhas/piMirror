@@ -24,6 +24,7 @@ html,body {
     float: right;
     font-size: 40px;
     max-width:130px;
+    padding-top: 10px;
     
 }
 #daySummary {
@@ -76,5 +77,44 @@ html,body {
   width: 300px;
   height:50px;
   color:green;
+  text-align: center;
+  font-weight: bold;
   /*border-style: solid*/
+}
+.social{
+  width: 300px;
+  height:200px;
+  color:red;
+  /*text-align: center;
+  font-weight: bold;*/
+  border-style: solid;
+}
+.icons{
+  width: 30px;
+  height: 200px;
+  color: blue;
+  /*border-style: solid;*/
+  float: right;
+}
+#FBicon{
+  /*border-style: solid;*/
+  color:blue;
+  width: 30px;
+  height:30px;
+  /*float: right;*/
+}
+#emailicon{
+  /*border-style: solid;*/
+  color: red;
+  width: 30px;
+  height:30px;
+  /*float: right;*/
+  
+}
+#calendaricon{
+  /*border-style: solid;*/
+  color:green;
+  width: 30px;
+  height:30px;
+  /*float: right;*/
 }

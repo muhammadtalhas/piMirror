@@ -16,6 +16,7 @@ function toCelsius(f) {
 function encodeUrl(url) {
     return url.split(' ').join('%20');
 }
+
 function hideCenterFrame() {
     $("#desc").slideUp("slow",function(){
      $("#frame").slideUp("slow");
