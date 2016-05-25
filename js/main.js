@@ -7,7 +7,6 @@ $(document).ready(function() {
     
     news_init();
     hideCenterFrame();
-    getSongSample("One Dance", "Drake");
     //alert("News init")
     //var imageUrl=generateMap(config.maps.origin, config.maps.destinations.school, config.maps.avoid);
     //console.log("Length of avoid array" + (config.maps.avoid).length)
