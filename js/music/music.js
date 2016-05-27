@@ -47,7 +47,7 @@ function playSample(data){
                             volume: 1.0
                         }, 1000);
                     } else if (this.currentTime > 27) {
-                        console.log("STUCK");
+                        console.log("STUCK ");
                         hideAlbumArt();
                         $(this).stop().animate({
                             volume: 0.0
