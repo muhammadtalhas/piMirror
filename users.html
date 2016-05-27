@@ -1,0 +1,60 @@
+<html>
+   <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> 
+      <script type='text/javascript'>
+        var indexInput = 2;
+         function addInput(){
+             var div = document.getElementById("destinationInput");
+             var container = document.createElement("div");
+                container.innerHTML = '<input type="text" name="name'+indexInput+'" size="10"> <input type="text" name="address'+indexInput+'" size="30"><br>';
+                div.appendChild(container);
+             //div.innerHTML = div.innerHTML + '<input type="text" name="name'+indexInput+'" size="10"> <input type="text" name="address'+indexInput+'" size="30"><br>';
+             indexInput++;
+         }
+         
+         
+      </script>
+   </head>
+   <body>
+      <h2>Add new User</h2>
+      <p><span class="error">* required field.</span></p>
+      <form method="post" action="handleData.php">
+         First Name: <input type="text" name="first_name">
+         <span class="error">* <?php echo $nameErr;?></span>
+         <br><br>
+         Last Name: <input type="text" name="last_name">
+         <br><br>
+         <p><i>The IMEI of the phone is used to validate a user. It is stored locally in /userSettings/user.json and is never sent over the internet</i>.</p>
+         IMEI: <input type="text" name="IMEI">
+         <span class="error">*<?php echo $imeiERR;?></span>
+         <br><br>
+         <h4>Personalized Compliments</h4>
+         <i>Multiple Compliments can be added. Place each compliment on a new line. There is no limit to compliments</i>.<br>
+         <i>NOTE: Some special characters may cause unintended behavior on the Raspberry Pi. Try to keep it simple!</i>.<br>
+         <i>If any portion is left empty, the default settings in config.js will be used</i>.<br>
+         Morning Compliments: 
+         <textarea name="morningComp" rows="5" cols="40"></textarea>
+         <br><br>
+         Afternoon Compliments: 
+         <textarea name="afternoonComp" rows="5" cols="40"></textarea>
+         <br><br>
+         Evening Compliments: 
+         <textarea name="eveningComp" rows="5" cols="40"></textarea>
+         <br><br>
+         <h4>Destinations</h4>
+         <i>Personalized destinations can be stored as variables. Here, you can enter a word or phrase to be used as a variable and an address to that location</i>.<br>
+         <i>For example, you may want to add a variable "work" and the address of your workplace. This way, when you are logged in, you may say "Traffic to work", and the mirror will display personalized traffic data for your work address</i>.<br>
+         <i>In the event of a overlap between default settings in config.js and with the current logged in user, the personalized login info for that user will take priority</i>.<br>
+         <p>Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Address</p>
+         <div id= destinationInput>
+            <input type="text" name="name1" size="10">
+            <input type="text" name="address1" size="30">
+            <br>
+         </div>
+         <input type="button" name="addMore" value="More Destinations" onClick="addInput();">
+         <br><br>
+         <input type="submit" value="Submit">
+      </form>
+      
+   </body>
+</html>
