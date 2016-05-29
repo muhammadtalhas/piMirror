@@ -15,8 +15,6 @@ var currentData = {
 }
 
 function updateCurrentWeather(address) {
-    //https://api.forecast.io/forecast/API/Long,Lat
-    //var geoCoords = geo.getGeo(address);
     var locationData = makeGoogleCall(address);
     locationData.success(function(data) {
         var Geo = [];

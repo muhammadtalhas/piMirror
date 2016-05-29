@@ -1,132 +1,131 @@
-html,body {
-    background-color: black;
-    color: #fff;
-    font-family: 'HelveticaNeue-UltraLight', 'Open Sans', sans-serif;
-    font-weight: 300;
-    position: relative;
-    
-     height: 100%;
-    margin: 0;
-    padding: 0;
+#albumArt
+{
+	border-style: solid;
+	color: red;
+	float: left;
+	height: 150px;
+	width: 150px;
 }
-.top-left {
-    float: left;
-    font-size: 40px;
-    padding-left: 10px;
-    padding-top: 10px;
+#art
+{
+	max-height: 100%;
+	max-width: 100%;
+	vertical-align: middle;
 }
-#Date {
-    float: left;
-    font-size: 30px;
-    
+#calendaricon
+{
+	color: green;
+	height: 30px;
+	width: 30px;
 }
-.top-right {
-    float: right;
-    font-size: 40px;
-    max-width:130px;
-    padding-top: 10px;
-    
+#Date
+{
+	float: left;
+	font-size: 30px;
 }
-#daySummary {
-    float: right;
-    font-size: 10px;
-   
+#daySummary
+{
+	float: right;
+	font-size: 10px;
 }
-.bottom{
-  position:fixed;
-  width:100%;
-  height:40px;
-  padding:10px;
-  padding-bottom: 40px;
-  bottom:20px;
-  text-align: center;
-  font-size: 30px;
+#desc
+{
+	color: green;
+	font-weight: bold;
+	height: 50px;
+	text-align: center;
+	width: 300px;
 }
-#news{
-  padding-bottom: 50px;
-  font-size: 20px;
+#emailicon
+{
+	color: red;
+	height: 30px;
+	width: 30px;
 }
-
-.center {
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:300px;
-    height:300px;
-    margin-left:-150px; /* -1/2 width */
-    margin-top:-150px; /* -1/2 height */
-    /*border-style: solid*/
+#FBicon
+{
+	color: blue;
+	height: 30px;
+	width: 30px;
 }
-.container {
-    position:absolute;
-    overflow: hidden;
-    left:50%;
-    top:50%;
-    width:300px;
-    height:300px;
-    margin-left:-150px; /* -1/2 width */
-    margin-top:-150px; /* -1/2 height */
-    /*border-style: solid*/
+#frame
+{
+	height: 250px;
+	width: 300px;
 }
-#frame{
-  width: 300px;
-  height: 250px;
-  /*border-style: solid*/
+#news
+{
+	font-size: 20px;
+	padding-bottom: 50px;
 }
-#desc{
-  width: 300px;
-  height:50px;
-  color:green;
-  text-align: center;
-  font-weight: bold;
-  /*border-style: solid*/
+.bottom
+{
+	bottom: 20px;
+	font-size: 30px;
+	height: 40px;
+	padding: 10px;
+	padding-bottom: 40px;
+	position: fixed;
+	text-align: center;
+	width: 100%;
 }
-.social{
-  width: 300px;
-  height:200px;
-  color:red;
-  /*text-align: center;
-  font-weight: bold;*/
-  border-style: solid;
+.center
+{
+	height: 300px;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: -150px;
+	position: absolute;
+	top: 50%;
+	width: 300px;
 }
-.icons{
-  width: 30px;
-  height: 200px;
-  color: blue;
-  /*border-style: solid;*/
-  float: right;
+.container
+{
+	height: 300px;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: -150px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	width: 300px;
 }
-#FBicon{
-  /*border-style: solid;*/
-  color:blue;
-  width: 30px;
-  height:30px;
-  /*float: right;*/
+.icons
+{
+	color: blue;
+	float: right;
+	height: 200px;
+	width: 30px;
 }
-#emailicon{
-  /*border-style: solid;*/
-  color: red;
-  width: 30px;
-  height:30px;
-  /*float: right;*/
-  
+.social
+{
+	border-style: solid;
+	color: red;
+	height: 200px;
+	width: 300px;
 }
-#calendaricon{
-  /*border-style: solid;*/
-  color:green;
-  width: 30px;
-  height:30px;
-  /*float: right;*/
+.top-left
+{
+	float: left;
+	font-size: 40px;
+	padding-left: 10px;
+	padding-top: 10px;
 }
-#albumArt{
-  color: red;
-  height: 150px;
-  width: 150px;
-  border-style: solid;
-  float: left;
+.top-right
+{
+	float: right;
+	font-size: 40px;
+	max-width: 130px;
+	padding-top: 10px;
 }
-#art{
-    max-width:100%;
-    max-height:100%;
-    vertical-align: middle;
+html,body
+{
+	background-color: black;
+	color: #fff;
+	font-family: 'HelveticaNeue-UltraLight', 'Open Sans', sans-serif;
+	font-weight: 300;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
 }
