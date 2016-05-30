@@ -1,10 +1,10 @@
 function voicecontrol_init() {
     if (annyang) {
         var commands = {
-            'Test': function() {
+            /*'Test': function() {
                 clock_init();
-            },
-            'traffic to *passedLocation': function(passedLocation) {
+            },*/
+            '(what is the)traffic to *passedLocation (today)': function(passedLocation) {
                 getTravelTime(config.maps.origin, passedLocation, loadedSettings.avoid, function(trafficOb) {
                     var imageUrl = generateMap(config.maps.origin, passedLocation, loadedSettings.avoid);
                     updateFrameWithTravel(imageUrl, trafficOb.travelTime, trafficOb.travelCondition);

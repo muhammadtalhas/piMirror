@@ -2,11 +2,11 @@
    <head>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> 
       <script type='text/javascript'>
-        var indexInput = 2;
+        var indexInput = 1;
          function addInput(){
              var div = document.getElementById("destinationInput");
              var container = document.createElement("div");
-                container.innerHTML = '<input type="text" name="name'+indexInput+'" size="10"> <input type="text" name="address'+indexInput+'" size="30"><br>';
+                container.innerHTML = '<input type="text" name="destinations['+indexInput+'][name]" size="10"> <input type="text" name="destinations['+indexInput+'][address]" size="30"><br>';
                 div.appendChild(container);
              //div.innerHTML = div.innerHTML + '<input type="text" name="name'+indexInput+'" size="10"> <input type="text" name="address'+indexInput+'" size="30"><br>';
              indexInput++;
@@ -25,7 +25,8 @@
          Last Name: <input type="text" name="last_name">
          <br><br>
          <p><i>The IMEI of the phone is used to validate a user. It is stored locally in /userSettings/user.json and is never sent over the internet</i>.</p>
-         IMEI: <input type="text" name="IMEI">
+         <p><i><b>ONLY INPUT THE FIRST 14 DIGITS</b></i></p>
+         IMEI: <input type="text" name="IMEI" maxlength=14>
          <span class="error">*<?php echo $imeiERR;?></span>
          <br><br>
          <h4>Personalized Compliments</h4>
@@ -47,12 +48,19 @@
          <i>In the event of a overlap between default settings in config.js and with the current logged in user, the personalized login info for that user will take priority</i>.<br>
          <p>Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Address</p>
          <div id= destinationInput>
-            <input type="text" name="name1" size="10">
-            <input type="text" name="address1" size="30">
+            <input type="text" name="destinations[0][name]" size="10">
+            <input type="text" name="destinations[0][address]" size="30">
             <br>
          </div>
          <input type="button" name="addMore" value="More Destinations" onClick="addInput();">
          <br><br>
+         <p>Method</p>
+         <input type="radio" name="method" value="driving" checked> Driving<br>
+         <input type="radio" name="method" value="walking"> Walking<br>
+         
+         <p>Avoid</p>
+            <input type="checkbox" name="avoid_highways" value="highways"> Highways<br>
+            <input type="checkbox" name="avoid_tolls" value="tolls"> Tolls<br>
          <input type="submit" value="Submit">
       </form>
       

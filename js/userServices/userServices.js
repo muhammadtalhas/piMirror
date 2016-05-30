@@ -9,6 +9,7 @@ function loadUserData() {
                 console.log(data.primaryKey)
                 if (data.primaryKey != null) {
                     editSettings(data.primaryKey)
+                    setTimeout(resetSettings(), 60000);
                 }
                 setTimeout(loadUserData(), 3000);
             },
@@ -58,6 +59,26 @@ function editSettings(key) {
     });
 }
 
-function resetSettings(args) {
-    //TODO
+function resetSettings() {
+        var loadedSettings = {
+        compliments: {
+            morning:config.compliments.morning.slice(),
+            afternoon:config.compliments.afternoon.slice(),
+            evening:config.compliments.evening.slice()
+    },
+        destinations: jQuery.extend({}, config.maps.destinations),
+        avoid: config.maps.avoid.slice(),
+        method: config.maps.method
+        
+        
+    }
+    
+    loadedSettings.compliments.evening = config.compliments.morning.slice();
+    loadedSettings.compliments.afternoon= config.compliments.afternoon.slice();
+    loadedSettings.compliments.evening = config.compliments.evening.slice();
+    
+        destinations= jQuery.extend({}, config.maps.destinations);
+        avoid= config.maps.avoid.slice();
+        method= config.maps.method;
+    
 }

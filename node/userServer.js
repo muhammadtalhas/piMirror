@@ -11,9 +11,10 @@ var logoutTimerId;
 
 app.get('/test/:imei', function(req, res) {
     console.log("Phone data recieved! " + req.params.imei);
-    if (curentUser != null) {
+    //if (currentUser.primaryKey != null) {
+        //console.log("Setting user")
         currentUser.primaryKey = req.params.imei;
-        }
+        //}
     
     fs.readFile(__dirname + "/" + "response.json", 'utf8', function(err, data) {
         console.log(data);
