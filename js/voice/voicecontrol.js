@@ -5,8 +5,8 @@ function voicecontrol_init() {
                 clock_init();
             },
             'traffic to *passedLocation': function(passedLocation) {
-                getTravelTime(config.maps.origin, passedLocation, config.maps.avoid, function(trafficOb) {
-                    var imageUrl = generateMap(config.maps.origin, passedLocation, config.maps.avoid);
+                getTravelTime(config.maps.origin, passedLocation, loadedSettings.avoid, function(trafficOb) {
+                    var imageUrl = generateMap(config.maps.origin, passedLocation, loadedSettings.avoid);
                     updateFrameWithTravel(imageUrl, trafficOb.travelTime, trafficOb.travelCondition);
                 })
             },

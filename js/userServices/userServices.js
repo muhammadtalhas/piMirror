@@ -1,17 +1,63 @@
 function loadUserData() {
-        console.log("trying load")
+    try {
+        console.log("checking login status")
         $.ajax({
-        url: "http://192.168.1.10:8081/getLoginData",
-        type: "GET",
-        dataType: "jsonp",
-        success: function(data) {
-            console.log(data.primaryKey)
-          
+            url: "http://localhost:8081/getLoginData",
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                console.log(data.primaryKey)
+                if (data.primaryKey != null) {
+                    editSettings(data.primaryKey)
+                }
+                setTimeout(loadUserData(), 3000);
+            },
+            error: function(e) {
+                console.log(e.statusText);
+                setTimeout(loadUserData(), 3000);
+            },
+            timeout: 15000
+        })
 
-        },
-        error: function(e) {
-            console.log(e.statusText);
-        },
-        timeout: 10000
-    })
+    } catch (e) {
+        console.log("There was an error communicating with the userServer service. Is it Running?");
+    }
+
+}
+
+function editSettings(key) {
+    console.log("/userSettings/" + key + ".json")
+    $.getJSON("/userSettings/" + key + ".json", function(data) {
+        console.log(data);
+        //console.log("Mor" + data.settings[0].compliments.morning)
+        //console.log("Aftern" + data.settings[0].compliments.afternoon)
+        //console.log("Even" + data.settings[0].compliments.evening)
+
+        //handle compliments
+        loadedSettings.compliments.morning = data.settings[0].compliments.morning.slice();
+        loadedSettings.compliments.afternoon = data.settings[0].compliments.afternoon.slice();
+        loadedSettings.compliments.evening = data.settings[0].compliments.evening.slice();
+
+        //handle map and traffic stuff
+        loadedSettings.destinations = {} // clean the object
+        console.log(data.settings[1].destinations)
+        for (var property in data.settings[1].destinations) {
+            if (data.settings[1].destinations.hasOwnProperty(property)) {
+                loadedSettings.destinations[property] = data.settings[1].destinations[property];
+            }
+        }
+        loadedSettings.avoid = data.settings[1].avoid.slice();
+        loadedSettings.method = data.settings[1].method;
+        //console.log("destinations after login ")
+        //console.log(loadedSettings.destinations
+        //compliment_init();
+
+        /*$.each( data, function( key, val ) {
+            console.log(key + "value:: " + val );
+        });*/
+    });
+}
+
+function resetSettings(args) {
+    //TODO
 }

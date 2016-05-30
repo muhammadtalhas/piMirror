@@ -14,11 +14,11 @@ function generateMap(origin, destination, avoidArray) {
         avoidStr = avoidStr.substring(0, avoidStr.length - 1);
     }
 
-    if (destination in config.maps.destinations) {
-        destination = config.maps.destinations[destination];
+    if (destination in loadedSettings.destinations) {
+        destination = loadedSettings.destinations[destination];
     }
 
-    var url = "http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes/" + config.maps.method + "?mapLayer=TrafficFlow&mapSize=300,250&waypoint.1=" + origin + "&waypoint.2=" + destination + "&avoid=" + avoidStr + "&key=" + config.maps.bingAPIKey;
+    var url = "http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes/" + loadedSettings.method + "?mapLayer=TrafficFlow&mapSize=300,250&waypoint.1=" + origin + "&waypoint.2=" + destination + "&avoid=" + avoidStr + "&key=" + config.maps.bingAPIKey;
     url = encodeUrl(url);
     console.log("URL " + url)
     return url;
@@ -39,12 +39,12 @@ function getTravelTime(origin, destination, avoidArray, callback) {
         avoidStr = avoidStr.substring(0, avoidStr.length - 1);
     }
 
-    if (destination in config.maps.destinations) {
-        destination = config.maps.destinations[destination];
+    if (destination in loadedSettings.destinations) {
+        destination = loadedSettings.destinations[destination];
     }
 
 
-    var uri = "http://dev.virtualearth.net/REST/V1/Routes/" + config.maps.method + "?wp.0=" + origin + "&wp.1=" + destination + "&avoid=" + avoidStr + "&key=" + config.maps.bingAPIKey;
+    var uri = "http://dev.virtualearth.net/REST/V1/Routes/" + loadedSettings.method + "?wp.0=" + origin + "&wp.1=" + destination + "&avoid=" + avoidStr + "&key=" + config.maps.bingAPIKey;
     uri = encodeUrl(uri);
     console.log("TRAFFIC DATA URI " + uri)
     var data;

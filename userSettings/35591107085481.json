@@ -1,0 +1,35 @@
+{
+    "first_name": "Sample",
+    "last_user": "User",
+    "settings": [
+        {
+            "compliments": {
+                "morning": [
+                    "MORNING TEST 1",
+                    "MORNING TEST 2",
+                    "MORNING TEST 3",
+                    "MORNING TEST 4"
+                ],
+                "afternoon": [
+                    "AFTERNOON TEST 1",
+                    "AFTERNOON TEST 2",
+                    "AFTERNOON TEST 3"
+                ],
+                "evening": [
+                    "EVENING TEST 1",
+                    "EVENING TEST 2",
+                    "EVENING TEST 3",
+                    "EVENING TEST 4"
+                ]
+            }
+        },
+        {
+            "destinations": {
+                "work": "1600 Pennsylvania Ave NW Washington DC 20500",
+                "school": "4400 University Dr Fairfax VA 22030"
+            },
+            "avoid": ["tolls"],
+            "method": "walking"
+        }
+    ]
+}

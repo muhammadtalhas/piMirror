@@ -1,6 +1,5 @@
 #albumArt
 {
-	border-style: solid;
 	color: red;
 	float: left;
 	height: 150px;
@@ -90,13 +89,22 @@
 	top: 50%;
 	width: 300px;
 }
-.icons
+/*.icons
 {
 	color: blue;
 	float: right;
 	height: 200px;
 	width: 30px;
+    border-style: solid;
 }
+.datalist
+{
+	color: blue;
+	float: left;
+	height: 200px;
+	width: 270px;
+    border-style: solid;
+}*/
 .social
 {
 	border-style: solid;

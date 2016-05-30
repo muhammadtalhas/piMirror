@@ -8,20 +8,20 @@ function updateCompliment() {
     var hour =moment.getHours();
     //console.log("Hour is "+ hour);
     if (hour>= 3 && hour <12) {
-        timedCompliment = config.compliments.morning.slice();
+        timedCompliment = loadedSettings.compliments.morning.slice();
     }
     else if (hour>=12 && hour <17) {
-        timedCompliment = config.compliments.afternoon.slice();
+        timedCompliment = loadedSettings.compliments.afternoon.slice();
     }
     else if (hour >=17 || hour <3) {
-        timedCompliment = config.compliments.evening.slice();
+        timedCompliment = loadedSettings.compliments.evening.slice();
     }
     else {
         //If the world is ending
         //console.log("World is ending")
-        timedCompliment = timedCompliment.concat(config.compliments.morning.slice(),
-                                                 config.compliments.afternoon.slice(),
-                                                 config.compliments.evening.slice()
+        timedCompliment = timedCompliment.concat(loadedSettings.compliments.morning.slice(),
+                                                 loadedSettings.compliments.afternoon.slice(),
+                                                 loadedSettings.compliments.evening.slice()
                                                  )
     }
     //console.log("compliments "+ timedCompliment)
