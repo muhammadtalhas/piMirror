@@ -1,5 +1,5 @@
 ## piMirror
-Work in Progress of interactive mirror Running on a Raspberry pi. Huge inspiration from Michael Teeuw and his 'Magic Mirror' 
+Work in Progress of interactive mirror Running on a Raspberry pi. Mirror will support multiusers with nfc based login system. Huge inspiration from Michael Teeuw and his 'Magic Mirror' 
 
 ## Current features
 * Time
