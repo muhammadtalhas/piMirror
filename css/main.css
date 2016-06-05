@@ -105,13 +105,24 @@
 	width: 270px;
     border-style: solid;
 }*/
-.social
+.eventName
 {
-	border-style: solid;
+	float: left;
+
+}
+.eventDate
+{
+	float: right;
+
+}
+#social
+{
+	/*border-style: solid;*/
 	color: red;
 	height: 200px;
 	width: 300px;
 }
+
 .top-left
 {
 	float: left;

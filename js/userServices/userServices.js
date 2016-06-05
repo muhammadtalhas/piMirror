@@ -1,5 +1,5 @@
 function loadUserData() {
-    try {
+   
         console.log("checking login status")
         $.ajax({
             url: "http://localhost:8081/getLoginData",
@@ -7,22 +7,22 @@ function loadUserData() {
             dataType: "json",
             success: function(data) {
                 console.log(data.primaryKey)
-                if (data.primaryKey != null) {
+                if (data.primaryKey !== null) {
                     editSettings(data.primaryKey)
+                    console.log("Logged in")
                     setTimeout(resetSettings(), 60000);
                 }
                 setTimeout(loadUserData(), 3000);
             },
             error: function(e) {
+                console.log("There was an error communicating with the userServer service. Is it Running?");
                 console.log(e.statusText);
                 setTimeout(loadUserData(), 3000);
             },
             timeout: 15000
         })
 
-    } catch (e) {
-        console.log("There was an error communicating with the userServer service. Is it Running?");
-    }
+
 
 }
 
@@ -60,18 +60,6 @@ function editSettings(key) {
 }
 
 function resetSettings() {
-        var loadedSettings = {
-        compliments: {
-            morning:config.compliments.morning.slice(),
-            afternoon:config.compliments.afternoon.slice(),
-            evening:config.compliments.evening.slice()
-    },
-        destinations: jQuery.extend({}, config.maps.destinations),
-        avoid: config.maps.avoid.slice(),
-        method: config.maps.method
-        
-        
-    }
     
     loadedSettings.compliments.evening = config.compliments.morning.slice();
     loadedSettings.compliments.afternoon= config.compliments.afternoon.slice();

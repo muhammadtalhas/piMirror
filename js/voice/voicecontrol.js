@@ -5,10 +5,13 @@ function voicecontrol_init() {
                 clock_init();
             },*/
             '(what is the)traffic to *passedLocation (today)': function(passedLocation) {
+                if (config.maps.active) {
                 getTravelTime(config.maps.origin, passedLocation, loadedSettings.avoid, function(trafficOb) {
                     var imageUrl = generateMap(config.maps.origin, passedLocation, loadedSettings.avoid);
                     updateFrameWithTravel(imageUrl, trafficOb.travelTime, trafficOb.travelCondition);
                 })
+                }
+                else{console.log("Sorry, the maps and travel feature is not active. Please check your config.js file")}
             },
             'play *title by *artist': function(title, artist) {
                 console.log(title + " By " +artist )

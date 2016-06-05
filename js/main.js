@@ -8,18 +8,20 @@
         avoid: config.maps.avoid.slice(),
         method: config.maps.method
         
-        
     }
 
 $(document).ready(function() {
-
-    console.log(loadedSettings.destinations)
     clock_init();
     weather_init();
     hideCenterFrame();
     compliment_init();
-    news_init();
+    if (config.news.active) {news_init();}
+    else{
+        console.log("Config has indicated that news ticker is deactive. Will not load");
+        $( "#news" ).remove();
+        }
     voicecontrol_init();
-    loadUserData();
-    //calendar_init();
+    if (config.multiUserServer) {loadUserData();}
+    else{console.log("Config has indicated that multi user service is not running. Will not ping");}
+    calendar_init();
 });
