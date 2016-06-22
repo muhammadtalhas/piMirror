@@ -25,3 +25,5 @@ A interactive, voice controlled, multi-user mirror! A challenge to myself to mak
 ## Demo
 * Coming VERY soon :)
 
+## License
+* MIT see LICENSE.txt
