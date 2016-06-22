@@ -1,20 +1,27 @@
-## piMirror
-Work in Progress of interactive mirror Running on a Raspberry pi. Mirror will support multiusers with nfc based login system. Huge inspiration from Michael Teeuw and his 'Magic Mirror' 
+## piMirror (#ProjectFairyTale)
+A interactive, voice controlled, multi-user mirror! A challenge to myself to make my own version of the hit project with new feautes and from scratch! Huge inspiration from Michael Teeuw and his 'Magic Mirror' 
 
 ## Current features
 * Time
+* Weather
+* Traffic Map + travel time
+* Log in System using NFC based Phones
+* Music Player
+* News ticker
+* Google Calendar Integration (Other Calendars work Too!)
 
 ##Planned Features
-* Weather
-* Calendar
-* Web based Authentification
-* Traffic
-* Maps
-* Music
-* List keeps growing!
+* Uber integration
+* Philips Hue voice Controled Lights
+* Social Media integration
+* NEST Thermostat integration
 
 ## Installation
-Stay Tuned for installation!
+* Installation Tutorial will be created once a stable version of the software is created (Pending feedback from you guys!)
 
-## Built With
-* Stay Tuned!
+## Dependencies
+* Stay Tuned for comprehensive list
+
+## Demo
+* Coming VERY soon :)
+
