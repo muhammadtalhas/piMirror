@@ -27,7 +27,7 @@ app.get('/test/:imei', function(req, res) {
     logoutTimerId = setTimeout(function() {
         currentUser.primaryKey = null;
         console.log("Logged out after one minuite " + currentUser.primaryKey)
-    }, 10000);
+    }, 60000);
 });
 
 app.get('/getLoginData', function(req, res) {

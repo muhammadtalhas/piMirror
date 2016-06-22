@@ -50,10 +50,10 @@ function getICAL(url, callback) {
                 container.appendChild(event);
                 appendedEvents = appendedEvents +1;
                 console.log(document.getElementById("event"))
-                /*$(event).slideUp('slow',function(){
+                $(event).slideUp('slow',function(){
                         $(event).slideDown('slow');
                         console.log("TEST")
-                        });*/
+                        });
                 /*$(event).slideDown('slow', function(){
                         console.log("done")
                         $(event).slideUp('slow');
@@ -66,18 +66,26 @@ function getICAL(url, callback) {
         callback();
 }
 
+//un-used at the moment
 function displayEvents() {
         //$('#container event')
         //$('#event').fadeIn();
         var nodes = jQuery("[id=event]") 
         console.log(nodes)
+}
 
+function destroyCal() {
+        $("#social").children().fadeOut(1000, function(){
+                var social = document.getElementById("social");
+                while (social.firstChild) {
+                        social.removeChild(social.firstChild);
+                }      
+        });
 
 }
 
-
 function calendar_init() {
-    getICAL(config.googleCalendar.ical ,function(){
+    getICAL(loadedSettings.googleCalendar ,function(){
         displayEvents();
     })
     //displayEvents();

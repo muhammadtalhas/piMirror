@@ -59,6 +59,13 @@ $destinations_obj_encode->method= $_POST["method"];
 
 $settings_array[] = $destinations_obj_encode;
 
+$ICAL_obj = new stdClass();
+$ICAL_obj_encode = new stdClass();
+$ICAL_obj->ical= $_POST["ICAL"];
+
+$ICAL_obj_encode->googleCalendar = $ICAL_obj;
+$settings_array[] = $ICAL_obj_encode;
+
 $obj->settings = $settings_array;
 var_dump($obj);
 $json = json_encode( $obj );
