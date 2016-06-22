@@ -1,5 +1,5 @@
 function getICAL(url, callback) {
-        new ical_parser("js/test.php" + "?url="+encodeURIComponent(config.googleCalendar.ical), function(cal){
+        new ical_parser("js/test.php" + "?url="+encodeURIComponent(url), function(cal){
         events = cal.getEvents();
         console.log(events);
         var futureEvents = [];
@@ -13,18 +13,20 @@ function getICAL(url, callback) {
             if (day.isSameOrAfter(now) && appendedEvents<6) {
                 console.log(currentEvent);
                 var container = document.getElementById("social");
-                var event = document.createElement("event");
-                
+                var event = document.createElement("div");
+                event.setAttribute("id", "event");
                 event.style.color = "white";
                 event.style.fontSize = "15px";
                  event.style.fontStyle = "oblique";
+                 //event.style.overflow = "visible !important"
                  if (day.isSame(now)) {
                     event.style.fontWeight = "bold";
                  }
-                 event.style.height = "25px";
+                 event.style.height = "30px";
                  event.style.width = "300px";
                  event.style.cssFloat = "left";
-                 event.style.display = "none";
+                 //event.style.visibility=  "hidden";
+                 $(event).hide();
                  var eventName = currentEvent.SUMMARY;
                  var eventNameLength = eventName.length;
                  if (eventNameLength > 18) {
@@ -44,9 +46,19 @@ function getICAL(url, callback) {
                  }
                  else {formattedTime = formattedTime + " AM"}
                  event.innerHTML = "<p class=\"eventName\">"+eventName+"</p><p class=\"eventDate\">"+formattedDate + " " + formattedTime+"</p>"
-                 var event2 = event.cloneNode();
+                 //var event2 = event.cloneNode();
                 container.appendChild(event);
-                appendedEvents = appendedEvents +1;                
+                appendedEvents = appendedEvents +1;
+                console.log(document.getElementById("event"))
+                /*$(event).slideUp('slow',function(){
+                        $(event).slideDown('slow');
+                        console.log("TEST")
+                        });*/
+                /*$(event).slideDown('slow', function(){
+                        console.log("done")
+                        $(event).slideUp('slow');
+                });*/
+                //$(event).animate({width:'toggle'},2500);
             }
             
         }
@@ -56,12 +68,16 @@ function getICAL(url, callback) {
 
 function displayEvents() {
         //$('#container event')
-        $('#event').fadeIn();
+        //$('#event').fadeIn();
+        var nodes = jQuery("[id=event]") 
+        console.log(nodes)
+
+
 }
 
 
 function calendar_init() {
-    getICAL(config.googleCalendar.ical, function(){
+    getICAL(config.googleCalendar.ical ,function(){
         displayEvents();
     })
     //displayEvents();

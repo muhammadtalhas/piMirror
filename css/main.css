@@ -108,12 +108,16 @@
 .eventName
 {
 	float: left;
-
+	white-space: nowrap;
 }
 .eventDate
 {
 	float: right;
 
+
+}
+p {
+    white-space: nowrap;
 }
 #social
 {
@@ -121,6 +125,7 @@
 	color: red;
 	height: 200px;
 	width: 300px;
+	overflow: visible !important;
 }
 
 .top-left
