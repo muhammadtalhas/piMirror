@@ -6,7 +6,7 @@ A interactive, voice controlled, multi-user mirror! A challenge to myself to mak
 * Weather
 * Traffic Map + travel time
 * Log in System using NFC based Phones
-* Music Player
+* Music Player (Spotify)
 * News ticker
 * Google Calendar Integration (Other Calendars work Too!)
 
