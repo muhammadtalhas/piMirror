@@ -1,3 +1,12 @@
+/*This is actually really nice code
+ *LOL, I based it off of Michael Teeuws solution, although have redone some of it to work with
+ *my callbacks.
+ *
+ *This uses geo services from geo.js which is very basic (but works).
+ * I will probably make the whole location services a tad bit better and more secure
+ *TODO comment this better and make it better
+ */
+
 var icon = {
     'clear-day': 'wi-day-sunny',
     'clear-night': 'wi-night-clear',
@@ -22,7 +31,6 @@ function updateCurrentWeather(address) {
         Geo.push(data.results[0].geometry.location.lng);
         var uri = "https://api.forecast.io/forecast/" + config.weather.apikey + "/" + Geo[0] + "," + Geo[1];
         $.getJSON(uri + "?callback=?", function(data) {
-            //console.log(data);
             if (config.weather.units === "metric") {
                 var currentTemp = toCelsius(data.currently.temperature);
                 var units = "&#8451"
@@ -30,8 +38,7 @@ function updateCurrentWeather(address) {
                 var currentTemp = data.currently.temperature;
                 var units = "&#8457"
             }
-            //console.log("From json " + data.currently.icon);
-            //console.log("From table" + icon[data.currently.icon])
+
             if (icon[data.currently.icon] == null) {
                 var iconTag = "<i class=\"wi wi-na\"></i>";
             } else {
@@ -50,16 +57,12 @@ function updateCurrentWeather(address) {
             if (document.getElementById('wIcon').innerHTML != iconTag) {
                 updateText(document.getElementById('wIcon'), iconTag);
             }
-            //console.log("INNER HTML FOR TEMP" + document.getElementById('Temp').innerHTML)
-                //document.getElementById('wIcon').innerHTML = iconTag;
+
         });
-        //Geo.push(data.results[0].geometry.location.lat);
-        //Geo.push(data.results[0].geometry.location.lng);
-    });
+       });
 }
 
 function weather_init() {
-    //console.log("IN INIT");
     updateCurrentWeather(config.weather.location)
     window.setInterval(function() {
         updateCurrentWeather(config.weather.location)

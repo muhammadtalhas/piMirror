@@ -1,6 +1,6 @@
 <html>
 <body>
-
+<!-- For prototype, everything is requred TODO fix this mess-->
 Welcome <?php echo $_POST["first_name"]; ?><br>
 Your email address is: <?php echo $_POST["IMEI"]; ?>
 

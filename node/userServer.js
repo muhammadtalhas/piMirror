@@ -1,3 +1,10 @@
+/*VERY VERY Ugly node program.
+ * again this if for the prototype.
+ * it will store the current user loggin in for 60 seconds.
+ * From there its up to the client to ping and find out what to do
+ * This is really really ugly and will be redone in websocket form (TODO)
+ */
+
 var express = require('express');
 var app = express();
 var fs = require("fs");
@@ -11,10 +18,9 @@ var logoutTimerId;
 
 app.get('/test/:imei', function(req, res) {
     console.log("Phone data recieved! " + req.params.imei);
-    //if (currentUser.primaryKey != null) {
-        //console.log("Setting user")
+  
         currentUser.primaryKey = req.params.imei;
-        //}
+
     
     fs.readFile(__dirname + "/" + "response.json", 'utf8', function(err, data) {
         console.log(data);

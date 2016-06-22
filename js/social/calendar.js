@@ -1,3 +1,4 @@
+//Theres literally so much js and jquery barf in here it makes my head hurt. Just go with it, it works
 function getICAL(url, callback) {
         new ical_parser("js/test.php" + "?url="+encodeURIComponent(url), function(cal){
         events = cal.getEvents();
@@ -8,7 +9,6 @@ function getICAL(url, callback) {
         var appendedEvents = 0
         for (var i in events) {
             var currentEvent = events[i];
-            //console.log(currentEvent);
             var day = moment(currentEvent.start_date, "DD/MM/YYYY");
             if (day.isSameOrAfter(now) && appendedEvents<6) {
                 console.log(currentEvent);
@@ -18,14 +18,12 @@ function getICAL(url, callback) {
                 event.style.color = "white";
                 event.style.fontSize = "15px";
                  event.style.fontStyle = "oblique";
-                 //event.style.overflow = "visible !important"
                  if (day.isSame(now)) {
                     event.style.fontWeight = "bold";
                  }
                  event.style.height = "30px";
                  event.style.width = "300px";
                  event.style.cssFloat = "left";
-                 //event.style.visibility=  "hidden";
                  $(event).hide();
                  var eventName = currentEvent.SUMMARY;
                  var eventNameLength = eventName.length;
@@ -54,11 +52,6 @@ function getICAL(url, callback) {
                         $(event).slideDown('slow');
                         console.log("TEST")
                         });
-                /*$(event).slideDown('slow', function(){
-                        console.log("done")
-                        $(event).slideUp('slow');
-                });*/
-                //$(event).animate({width:'toggle'},2500);
             }
             
         }
@@ -66,7 +59,7 @@ function getICAL(url, callback) {
         callback();
 }
 
-//un-used at the moment
+//un-used at the moment but left in cause its 3am and i dont feel like re working the cal backs
 function displayEvents() {
         //$('#container event')
         //$('#event').fadeIn();
@@ -81,6 +74,7 @@ function destroyCal() {
                         social.removeChild(social.firstChild);
                 }      
         });
+        
 
 }
 
@@ -88,5 +82,4 @@ function calendar_init() {
     getICAL(loadedSettings.googleCalendar ,function(){
         displayEvents();
     })
-    //displayEvents();
 }

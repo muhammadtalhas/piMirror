@@ -1,3 +1,6 @@
+/*Honestly LOL ill comment this later. Its super ugly barf rainbows. It works idk how. Its using long pooling but ill eventually change it to use
+ *some sort of websockets. This is mostly for the prototype
+ */
 function loadUserData() {
 
     console.log("checking login status")
@@ -13,8 +16,7 @@ function loadUserData() {
             if (data.primaryKey !== null) {
                 editSettings(data.primaryKey)
                 console.log("Logged in")
-                    //sleep(60)
-                    //resetSettings();
+       
                 setTimeout(function() {
                     resetSettings();
                     loadUserData();
@@ -42,10 +44,6 @@ function editSettings(key) {
         console.log(data);
         console.log(data.settings);
 
-        //console.log("Mor" + data.settings[0].compliments.morning)
-        //console.log("Aftern" + data.settings[0].compliments.afternoon)
-        //console.log("Even" + data.settings[0].compliments.evening)
-
         loadedSettings.userLoggedIn = 1;
 
         //handle compliments
@@ -66,13 +64,7 @@ function editSettings(key) {
 
         loadedSettings.googleCalendar = data.settings[2].googleCalendar.ical;
         calendar_init();
-        //console.log("destinations after login ")
-        //console.log(loadedSettings.destinations
-        //compliment_init();
 
-        /*$.each( data, function( key, val ) {
-            console.log(key + "value:: " + val );
-        });*/
     });
 }
 
