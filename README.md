@@ -23,7 +23,7 @@ A interactive, voice controlled, multi-user mirror! A challenge to myself to mak
 * Stay Tuned for comprehensive list
 
 ## Demo
-* Coming VERY soon :)
+* https://www.youtube.com/watch?v=wUAKOEMS_m8
 
 ## License
 * MIT see LICENSE.txt
